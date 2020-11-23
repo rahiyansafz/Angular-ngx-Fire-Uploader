@@ -1,0 +1,36 @@
+<header class="navbar navbar-dark bg-dark navbar-fixed-top navbar-expand-lg mb-5">
+	<div class="container" style="padding-left: 0; padding-right: 0;">
+
+		<a class="navbar-brand" routerLink="" (click)="navbarCollapsed = true">
+			<img src="https://nestjs.com/img/logo-small.svg"
+           width="30" height="30"
+           class="d-inline-block align-top">
+      Angular Firebase Uploader
+    </a>
+
+			<button class="navbar-toggler navbar-toggler-right" type="button"
+            (click)="navbarCollapsed = !navbarCollapsed"
+            [attr.aria-expanded]="!navbarCollapsed"
+            aria-controls="navbarContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+			<div class="navbar-collapse" [ngbCollapse]="navbarCollapsed" id="navbarContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+						<a class="nav-link" routerLink="" (click)="navbarCollapsed = true">Fire Photo</a>
+					</li>
+					<li class="nav-item" routerLinkActive="active">
+						<a class="nav-link" routerLink="/multiple-files-upload" (click)="navbarCollapsed = true">Fire
+							Manager</a>
+					</li>
+				</ul>
+			</div>
+	</div>
+</header>
+
+<router-outlet></router-outlet>
+
+<simple-notifications></simple-notifications>
